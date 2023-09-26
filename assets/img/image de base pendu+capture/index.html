@@ -1,0 +1,21 @@
+<input type="text" />
+<button>Essai</button>
+
+<script type="text/javascript">
+
+    var mot;
+    mot = "javascript";
+
+    tableau = mot.split(''); // ['j', 'a', 'v', 'a', 's', 'c', 'r', 'i', 'p', 't']
+    console.log(tableau.length);
+
+    document.querySelector('button').onclick = function() {
+        let lettre;
+        lettre = document.querySelector('input').value;
+        console.log(lettre);
+    }
+
+    console.log([1, 2, 3, 4, 5].includes(2));
+    console.log([1, 2, 3, 4, 5].includes(7));
+
+</script>

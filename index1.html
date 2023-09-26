@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+
+    <meta name="author" content="Kapikes & david T." />
+
+    <meta name="copyright" content="Kapikes" />
+
+    <meta name="description" content="jeu de pendu" />
+
+    <meta name="keywords" content="  Kapikes, game, jeu" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" type="image/png" href="./assets/img/boom/b6.png" />
+
+    <link rel="stylesheet" type="text/css" href="./assets/framework/css/bootstrap.min.css?version=5.1.3" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/index.css" />
+
+    <title>pendu</title>
+</head>
+
+<body class="text-center">
+    <header class="container-fluid">
+        <nav class="row">   <!-- titre -->
+            <div class="col-12  titre" id="titre"><img class="img-fluid" src="./assets/img/decors/banner.png" alt="">
+            </div>
+
+        </nav>
+    </header>
+
+    <main class="container-fluid ">
+
+        <div class="p-1 row">
+
+            <div class="p-1 col-6">
+
+                <div class="buisson">
+
+                    <!-- bombes -->
+                    <img class="img-fluid" src="./assets/img/boom/b0.png" alt="" id="boom">
+
+                </div>
+            </div>
+
+
+            <div class=" col-6 parcho">     <!-- reglement -->
+                <p class="mt-3 fs-2 p-3">Regle => 10 vies pour trouver 10 mots, <br> 8 chances pour chaque mot , que des
+                    lettres
+                    en minuscules <br> aucune majuscule et aucun accents , tous sur votre clavier </p>
+
+
+                <!-- temps de la partie en cours -->
+                <div class=" p-1 fs-2">Temps => <time id="time"></time></div>
+               
+               
+                <!-- vie -->
+
+                <div class="fs-2" id="pv"> vie=>
+                    <img src="./assets/img/vie/vie100.png" class="img-fluid coeur" id="vie1" alt="">
+                    <img src="./assets/img/vie/vie100.png" class="img-fluid coeur" id="vie2" alt="">
+                    <img src="./assets/img/vie/vie100.png" class="img-fluid coeur" id="vie3" alt="">
+                    <img src="./assets/img/vie/vie100.png" class="img-fluid coeur" id="vie4" alt="">
+                    <img src="./assets/img/vie/vie100.png" class="img-fluid coeur" id="vie5" alt="">
+                    <img src="./assets/img/vie/vie100.png" class="img-fluid coeur" id="vie6" alt="">
+                    <img src="./assets/img/vie/vie100.png" class="img-fluid coeur" id="vie7" alt="">
+                    <img src="./assets/img/vie/vie100.png" class="img-fluid coeur" id="vie8" alt="">
+                    <img src="./assets/img/vie/vie100.png" class="img-fluid coeur" id="vie9" alt="">
+                    <img src="./assets/img/vie/vie100.png" class="img-fluid coeur" id="vie10" alt="">
+                </div>
+                <div class="" id="kk"></div>
+
+
+
+                                <!-- coeur du jeu -->
+                <div class="p-2 fs-2 ">mot a trouver
+                    <div class="p-3" id="pendu"></div>
+                    <div class="" id="soluce"></div>
+                </div>
+                <div><div class=" btn btn-danger btn-lg d-none" id="restart" value="Rafraîchir"
+                    onclick="history.go(0)"><b class="d-block"> REJOUER </b></div>
+                    <!-- commencer la partie-->
+                    <span class="btn btn-danger d-none" id="debut" onclick="debut()">Demarer la partie</span>
+                    <div class="row " id="dif_class">
+
+
+
+
+                        <p class="fs-2"> selectionner le niveau de difficulter</p>
+                                    <!--difficulter-->
+                        <span class="col-4 fs-2 btn btn-danger btn-sm cadre" onclick="difficulte()"
+                            id="dif_facile">Facile</span>
+                        <span class="col-4 fs-2 btn btn-danger btn-sm cadre" onclick="difficulte()"
+                            id="dif_moyen">Moyen</span>
+                        <span class="col-4 fs-2 btn btn-danger btn-sm cadre" onclick="difficulte()"
+                            id="dif_dur">Dur</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+                                <!-- clavier -->
+        <div class=" row  p-3" id="clavier">
+            <div class=" col-2"><img class="img-fluid" src="./assets/img/decors/dragon.png" alt=""> </div>
+            <div class="p-3 col-8">
+
+                <button class="clav"><i class=" lettre" onclick="a" id="let_a">a</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="b" id="let_b">b</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="c" id="let_c">c</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="d" id="let_d">d</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="e" id="let_e">e</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="f" id="let_f">f</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="g" id="let_g">g</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="h" id="let_h">h</i></button>
+
+                
+                <button class="clav"><i class=" lettre" onclick="i" id="let_i">i</i></button>
+                <br>
+
+                <button class="clav"><i class=" lettre" onclick="j" id="let_j">j</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="k" id="let_k">k</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="l" id="let_l">l</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="m" id="let_m">m</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="n" id="let_n">n</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="o" id="let_o">o</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="p" id="let_p">p</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="q" id="let_q">q</i></button>
+                <br>
+
+                <button class="clav"><i class=" lettre" onclick="r" id="let_r">r</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="s" id="let_s">s</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="t" id="let_t">t</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="u" id="let_u">u</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="v" id="let_v">v</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="w" id="let_w">w</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="x" id="let_x">x</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="y" id="let_y">y</i></button>
+
+
+                <button class="clav"><i class=" lettre" onclick="z" id="let_z">z</i></button>
+
+            </div>
+            <div class="col-2 samourai"><img class="img-fluid sam" src="./assets/img/decors/samurai-ge4b6ade14_640.png"
+                    alt=""></div>
+
+        </div>
+
+
+    </main>
+    <footer>
+        <p class="p-1 text-end pe-3">&copy;Kapikes</p>
+    </footer>
+    <script type="text/javascript" src="./assets/js/const&var.js"></script>
+
+    <script type="text/javascript" src="./assets/js/index.js"></script>
+    <script type="text/javascript" src="./assets/js/tps.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+                 page de fin de jeu
+                <div class="row p-2 d-none" id="fin">
+                    <div class="col-10 offset-1"> <img src="./assets/img/fin/index.jpg" class="img-fluid" alt=""></div>
+                    <div class="col-12 sizee">Vous avez Finis le Jeu </div>
+
+                   
+                    <div class="col-6 ">
+                        <div class="sizee">Votre Temps sur toutes les Parties </div>
+                        <div class="row">
+                             temps des partis
+                            <div class="col-12 sizee">Parties1=><span id="time1"></span></div>
+                            <div class="col-12 sizee">Parties2=><span id="time2"></span></div>
+                            <div class="col-12 sizee">Parties3=><span id="time3"></span></div>
+                            <div class="col-12 sizee">Parties4=><span id="time4"></span></div>
+                            <div class="col-12 sizee">Parties5=><span id="time5"></span></div>
+                            <div class="col-12 sizee">Toutes les Parties=><span id="time_toto"></span></div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 ">
+                        <div class="sizee">Vos Score sur toutes les Parties </div>
+                        <div>
+                             coups des partis
+                            <div class="sizee">Parties1=><span id="nombre_de_coup1"></span>Coup</div>
+                            <div class="sizee">Parties2=><span id="nombre_de_coup2"></span>Coup</div>
+                            <div class="sizee">Parties3=><span id="nombre_de_coup3"></span>Coup</div>
+                            <div class="sizee">Parties4=><span id="nombre_de_coup4"></span>Coup</div>
+                            <div class="sizee">Parties5=><span id="nombre_de_coup5"></span>Coup</div>
+                            <div class="sizee">Toutes les Parties=><span id="nombre_de_coup_toto"></span>Coup</div>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div> -->

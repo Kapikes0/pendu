@@ -1,0 +1,89 @@
+
+            /* style d'ecriture */
+@font-face {
+    font-family:"dungeon" ;
+    src: url(./../font/dungeon/DUNGRG__.TTF);
+}
+@font-face {
+    font-family:"celtic" ;
+    src: url(./../font/celtic_md/celticmd.ttf);
+}
+
+main{
+    font-family: "dungeon";
+    font-size: 1.5em;
+}
+
+
+
+                /* background et img */
+.coeur{
+    width: 30px;
+}
+body{
+    background-image:url(./../img/decors/dreams-g5ee49cc45_1280.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position:center ;
+}
+.titre img {
+    width: 50vw;
+    height: 25vw;
+}
+.parcho{
+    background-image: url(./../img/decors/paper-g89e0c1d1d_640.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.buisson{
+    background-image: url(./../img/decors/île-volante.png);
+    background-repeat: no-repeat;
+}
+.samourai{
+    background-image:url(./../img/decors/palm-tree-g3bb99dd3d_640.png) ;
+    z-index: 5;
+}
+
+
+
+
+
+
+
+
+
+
+                                        /*css pour creer les touches du clavier*/
+.clav{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    margin: 2px;
+    border-radius: 10px;
+    background: linear-gradient(180deg,#282828,#202020);
+    box-shadow:inset -8px 0 8px rgba(0,0,0,0.15), inset 0 -8px 8px rgba(0,0,0,0.25)
+     0 0 0 2px rgba(0,0,0,0.75),10px 20px 25px rgba(0,0,0,0.4);
+    overflow: hidden;
+}
+.clav::before{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    bottom: 14px;
+    right: 12px;
+    background: linear-gradient(90deg,#232323,#4a4a4a);
+    border-radius: 10px;
+    box-shadow: -10px -10px 10px rgba(255, 255, 255, 0.25),10px 5px 10px rgba(0,0,0,0.15);
+    border-left: 1px solid #0004;
+    border-bottom: 1px solid #0004;
+    border-top: 1px solid #0009;
+}
+.clav i {
+    position: relative;
+    color: rgb(0, 159, 252);
+    font-style: normal;
+    font-size: 1.5em;
+    padding: 15px 20px;
+}
